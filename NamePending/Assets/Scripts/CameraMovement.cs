@@ -8,8 +8,9 @@ public class CameraMovement : MonoBehaviour {
 	public float xSpeed = 2.0f;
 	public GUIText debugText;
 	public GameObject playerR;
-
-
+	private HashIDs hash;
+	private Animator anim;
+	
 	private Transform player;
 	private GameObject hitGameObject;
 	private Vector3 offset;
@@ -25,6 +26,9 @@ public class CameraMovement : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
 		//		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
+		anim = GetComponent<Animator> ();
+		hash = GameObject.FindGameObjectWithTag (Tags.gameController).GetComponent<HashIDs> ();
+		anim.SetBool(hash.deadBool, false);
 	}
 	
 	void Update()
@@ -37,8 +41,6 @@ public class CameraMovement : MonoBehaviour {
 			debugText.text = "Count: " + count;
 			checkTargetHit (transform.position);
 		}
-		
-		
 	}
 	
 	void LateUpdate()
@@ -61,6 +63,7 @@ public class CameraMovement : MonoBehaviour {
 		if (Physics.Raycast(checkPos, transform.forward, out hit)){
 			if (hit.transform.tag == "Target")
 			{
+				anim.SetBool(hash.isShootingBool, true);
 				debugText.text = "Score: " + count++;
 				Destroy(hit.transform.gameObject);
 			}

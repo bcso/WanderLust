@@ -13223,7 +13223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ec4a4ab32ac459db26d784112b6068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSmoothing: 100
+  turnSmoothing: 15
   speedDampTime: .100000001
   ySpeed: 1.20000005
   xSpeed: 1
@@ -15302,7 +15302,7 @@ Transform:
   - {fileID: 829266811}
   - {fileID: 208934814}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &697703714
 GameObject:
   m_ObjectHideFlags: 0
@@ -39862,6 +39862,7 @@ GameObject:
   - 124: {fileID: 1097786859}
   - 81: {fileID: 1097786858}
   - 114: {fileID: 1097786863}
+  - 95: {fileID: 1097786864}
   m_Layer: 0
   m_Name: camera_main
   m_TagString: MainCamera
@@ -39929,7 +39930,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097786857}
   m_LocalRotation: {x: .130526215, y: 0, z: 0, w: .991444886}
-  m_LocalPosition: {x: -2.5, y: 1.5, z: 0}
+  m_LocalPosition: {x: -2.5, y: 1.5, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39946,10 +39947,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relCameraPosition: {x: 0, y: 0, z: 0}
-  ySpeed: 1.20000005
-  xSpeed: 1
-  debugText: {fileID: 557708920}
-  playerR: {fileID: 1475961320}
+  ySpeed: 2.20000005
+  xSpeed: 2
+  debugText: {fileID: 0}
+  playerR: {fileID: 0}
+--- !u!95 &1097786864
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097786857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6850ab16a498f4251935ad8fe6b14854, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1098526637
 GameObject:
   m_ObjectHideFlags: 0
@@ -50355,6 +50371,8 @@ MonoBehaviour:
   aimWeightFloat: 0
   angularSpeedFloat: 0
   openBool: 0
+  isShootingBool: 0
+  shootingState: 0
 --- !u!82 &1564200539
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50425,7 +50443,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1564518422
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ public class HashIDs : MonoBehaviour {
 	public int shotFloat;
 	public int aimWeightFloat;
 	public int angularSpeedFloat;
-	public int openBool; 
+	public int openBool;
+	public int isShootingBool; 
+	public int shootingState;
 
 	void Awake() 
 	{
@@ -22,5 +24,7 @@ public class HashIDs : MonoBehaviour {
 		aimWeightFloat = Animator.StringToHash ("AimWeight");
 		angularSpeedFloat = Animator.StringToHash ("AngularSpeed");
 		openBool = Animator.StringToHash ("Open");
+		isShootingBool = Animator.StringToHash ("IsShooting");
+		shootingState = Animator.StringToHash ("Shooting.WeaponShoot");
 	}
 }
