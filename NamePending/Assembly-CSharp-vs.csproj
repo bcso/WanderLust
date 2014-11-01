@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\CameraMovement.cs" />
      <Compile Include="Assets\MovementScript.cs" />
+     <Compile Include="Assets\Rotator.cs" />
      <Compile Include="Assets\Tags.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

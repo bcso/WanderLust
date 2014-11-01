@@ -14,10 +14,12 @@ public class CameraMovement : MonoBehaviour {
 //	private float relCameraPosMag; 
 	private float mouseX;
 	private float mouseY;
+	private int score= 0;
 
 
 	void Awake ()
 	{
+		Screen.showCursor = false;
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
 //		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
@@ -27,6 +29,7 @@ public class CameraMovement : MonoBehaviour {
 	{
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
+		player.LookAt(transform.forward);
 		if (Input.GetMouseButtonDown(0))
 		{
 			checkTargetHit (transform.position);
@@ -42,6 +45,10 @@ public class CameraMovement : MonoBehaviour {
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
 
 		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
+//		var rotationR = new Vector3(mouseY, 0, 0);
+//		var vectUp = Vector3.up;
+//		player.rotation = Quaternion.LookRotation (rotationR);
+
 		transform.rotation = rotation;
 
 	}
@@ -50,10 +57,12 @@ public class CameraMovement : MonoBehaviour {
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast(checkPos, Vector3.forward, out hit)){
+		if (Physics.Raycast(checkPos, transform.forward, out hit)){
 			if (hit.transform.tag == "Target")
 			{
-				debugText.text = "Target hit!";
+				score++;
+				debugText.text = "Score: " + score;
+				Destroy(hit.transform.gameObject);
 			}
 		}
 
