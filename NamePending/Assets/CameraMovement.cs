@@ -33,8 +33,8 @@ public class CameraMovement : MonoBehaviour {
 	void LateUpdate()
 	{
 		mouseX += Input.GetAxis ("Mouse X");
-		mouseY += Input.GetAxis ("Mouse Y") * ySpeed;
-	
+		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
+		
 		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
 		transform.rotation = rotation;
 	}
