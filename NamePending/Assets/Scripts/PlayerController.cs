@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		anim = GetComponent<Animator> ();
 		hash = GameObject.FindGameObjectWithTag (Tags.gameController).GetComponent<HashIDs> ();
-		anim.SetLayerWeight (1, 1f);
+//		anim.SetLayerWeight (1, 1f);
 	}
 
 	void FixedUpdate()

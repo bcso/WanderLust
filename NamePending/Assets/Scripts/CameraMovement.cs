@@ -22,7 +22,6 @@ public class CameraMovement : MonoBehaviour {
 	
 	void Awake ()
 	{
-		Screen.showCursor = false;
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
 		//		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
@@ -30,6 +29,7 @@ public class CameraMovement : MonoBehaviour {
 	
 	void Update()
 	{
+		Screen.showCursor = false;
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
 		if (Input.GetMouseButtonDown(0))
@@ -58,10 +58,11 @@ public class CameraMovement : MonoBehaviour {
 	{
 		RaycastHit hit;
 		
-		if (Physics.Raycast(checkPos, Vector3.forward, out hit)){
+		if (Physics.Raycast(checkPos, transform.forward, out hit)){
 			if (hit.transform.tag == "Target")
 			{
 				debugText.text = "Score: " + count++;
+				Destroy(hit.transform.gameObject);
 			}
 		}
 		
