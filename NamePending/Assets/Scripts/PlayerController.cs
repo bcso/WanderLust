@@ -6,6 +6,11 @@ public class PlayerController : MonoBehaviour {
 	public float turnSmoothing = 15f;
 	public float speedDampTime =0.1f;
 
+	public float ySpeed = 1.2f;
+	public float xSpeed = 1.0f;
+	private float mouseX;
+	private float mouseY;
+
 	private Animator anim;
 	private HashIDs hash;
 
@@ -18,10 +23,11 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		float h = Input.GetAxis ("Horizontal");
-		float v = Input.GetAxis ("Vertical");  
-
-		MovementManagement (h, v);
+		//float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis ("Vertical");
+		mouseX += Input.GetAxis ("Mouse X");
+	
+		MovementManagement (mouseX, v);
 	}
 
 	void Update()
@@ -34,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 		if (horizontal != 0f || vertical != 0f) 
 		{
 			Rotating(horizontal, vertical);
-			anim.SetFloat(hash.speedFloat, 5.5f, speedDampTime, Time.deltaTime); 
+			anim.SetFloat(hash.speedFloat, 4.5f, speedDampTime, Time.deltaTime); 
 		}
 
 		else
@@ -45,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Rotating (float horizontal, float vertical)
 	{
-		Vector3 targetDirection = new Vector3 (horizontal, 0.0f, vertical);
+		Vector3 targetDirection = new Vector3 (horizontal, 0.0f, 0.0f);
 		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
 		Quaternion newRotation = Quaternion.Lerp (rigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
 		rigidbody.MoveRotation (newRotation);

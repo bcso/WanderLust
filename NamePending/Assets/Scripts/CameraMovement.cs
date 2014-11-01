@@ -47,6 +47,7 @@ public class CameraMovement : MonoBehaviour {
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
 
 
+		
 
 		var rotation = Quaternion.Euler(0, mouseX, 0);
 		//Vector3 playerRotation = new Vector3 (mouseY, 0.0f, 0.0f);

@@ -12401,7 +12401,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &609986140
 CapsuleCollider:
@@ -12443,6 +12443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ec4a4ab32ac459db26d784112b6068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSmoothing: 15
+  speedDampTime: .100000001
+  ySpeed: 1.20000005
+  xSpeed: 1
 --- !u!1 &610172407
 GameObject:
   m_ObjectHideFlags: 0
@@ -38659,7 +38663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097786857}
   m_LocalRotation: {x: .130526215, y: 0, z: 0, w: .991444886}
-  m_LocalPosition: {x: -9.98880005, y: 1.86609995, z: -1.89300001}
+  m_LocalPosition: {x: -2.5, y: 1.5, z: -1.89300001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47098,7 +47102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1475961321
 Renderer:
   m_ObjectHideFlags: 0
@@ -48769,6 +48773,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fa7701dc6614360841b561178e1765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dyingState: 0
+  deadBool: 0
+  locomotionState: 0
+  speedFloat: 0
+  shotFloat: 0
+  aimWeightFloat: 0
+  angularSpeedFloat: 0
+  openBool: 0
 --- !u!82 &1564200539
 AudioSource:
   m_ObjectHideFlags: 0
