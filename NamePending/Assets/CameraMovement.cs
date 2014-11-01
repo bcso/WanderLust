@@ -27,7 +27,12 @@ public class CameraMovement : MonoBehaviour {
 	{
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
-		checkPosition (relCameraPosition);
+		if (Input.GetMouseButtonDown(0))
+		{
+			checkTargetHit (transform.position);
+		}
+			
+
 		
 	}
 
@@ -35,20 +40,20 @@ public class CameraMovement : MonoBehaviour {
 	{
 		mouseX += Input.GetAxis ("Mouse X");
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
-		debugText.text = mouseX.ToString();
+
 		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
 		transform.rotation = rotation;
 
 	}
 
-	void checkPosition(Vector3 checkPos)
+	void checkTargetHit(Vector3 checkPos)
 	{
 		RaycastHit hit;
 
 		if (Physics.Raycast(checkPos, Vector3.forward, out hit)){
 			if (hit.transform.tag == "Target")
 			{
-
+				debugText.text = "Target hit!";
 			}
 		}
 
