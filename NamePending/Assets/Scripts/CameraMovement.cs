@@ -4,8 +4,8 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 	
 	public Vector3 relCameraPosition;
-	public float ySpeed = 1.2f;
-	public float xSpeed = 1.0f;
+	public float ySpeed = 2.2f;
+	public float xSpeed = 2.0f;
 	public GUIText debugText;
 	public GameObject playerR;
 
@@ -18,10 +18,11 @@ public class CameraMovement : MonoBehaviour {
 	private float mouseY;
 	private float h;
 	private float v;
-	
+	private int count = 0;
 	
 	void Awake ()
 	{
+		Screen.showCursor = false;
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
 		//		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
@@ -33,10 +34,9 @@ public class CameraMovement : MonoBehaviour {
 		relCameraPosition = transform.position - player.position;
 		if (Input.GetMouseButtonDown(0))
 		{
+			debugText.text = "Count: " + count;
 			checkTargetHit (transform.position);
 		}
-
-		
 		
 		
 	}
@@ -45,8 +45,6 @@ public class CameraMovement : MonoBehaviour {
 	{
 		mouseX += Input.GetAxis ("Mouse X");
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
-
-
 		
 
 		var rotation = Quaternion.Euler(0, mouseX, 0);
@@ -63,7 +61,7 @@ public class CameraMovement : MonoBehaviour {
 		if (Physics.Raycast(checkPos, Vector3.forward, out hit)){
 			if (hit.transform.tag == "Target")
 			{
-				debugText.text = "Target hit!";
+				debugText.text = "Score: " + count++;
 			}
 		}
 		

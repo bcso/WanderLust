@@ -23,11 +23,10 @@ public class PlayerController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		//float h = Input.GetAxis ("Horizontal");
+		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
-		mouseX += Input.GetAxis ("Mouse X");
 	
-		MovementManagement (mouseX, v);
+		MovementManagement (h, v);
 	}
 
 	void Update()
@@ -51,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Rotating (float horizontal, float vertical)
 	{
-		Vector3 targetDirection = new Vector3 (horizontal, 0.0f, 0.0f);
+		Vector3 targetDirection = Camera.main.transform.forward;
 		Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
 		Quaternion newRotation = Quaternion.Lerp (rigidbody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
 		rigidbody.MoveRotation (newRotation);
