@@ -6,11 +6,12 @@ public class CameraMovement : MonoBehaviour {
 	public Vector3 relCameraPosition;
 	public float ySpeed = 1.2f;
 	public float xSpeed = 1.0f;
+	public GUIText debugText;
 
 	private Transform player;
 	private GameObject hitGameObject;
 	private Vector3 offset;
-	private float relCameraPosMag; 
+//	private float relCameraPosMag; 
 	private float mouseX;
 	private float mouseY;
 
@@ -19,7 +20,7 @@ public class CameraMovement : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
-		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
+//		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
 	}
 	
 	void Update()
@@ -34,29 +35,20 @@ public class CameraMovement : MonoBehaviour {
 	{
 		mouseX += Input.GetAxis ("Mouse X");
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
-		
+		debugText.text = mouseX.ToString();
 		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
 		transform.rotation = rotation;
+
 	}
 
 	void checkPosition(Vector3 checkPos)
 	{
 		RaycastHit hit;
 
-		if (Physics.Raycast(checkPos, player.position - checkPos, out hit ,relCameraPosMag)){
-			if (hit.transform != player)
+		if (Physics.Raycast(checkPos, Vector3.forward, out hit)){
+			if (hit.transform.tag == "Target")
 			{
-				hitGameObject = hit.transform.gameObject;
-				Color temp = Color.white;
-				temp.a = 0.5f;
 
-				hitGameObject.renderer.material.color = temp;
-			}
-			else
-			{
-				Color temp = Color.white;
-				temp.a = 0.5f;
-				hitGameObject.renderer.material.color = temp;
 			}
 		}
 
