@@ -17,16 +17,19 @@ public class CameraMovement : MonoBehaviour {
 	private int score= 0;
 
 
+
+
 	void Awake ()
 	{
-		Screen.showCursor = false;
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
+		debugText.text = "Score: " + score;
 //		relCameraPosMag = relCameraPosition.magnitude - 0.5f;
 	}
 	
 	void Update()
 	{
+		Screen.showCursor = false;
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
 		player.LookAt(transform.forward);
