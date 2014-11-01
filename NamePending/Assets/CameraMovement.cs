@@ -4,12 +4,16 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 	
 	public Vector3 relCameraPosition;
-
+	public float ySpeed = 1.2f;
+	public float xSpeed = 1.0f;
 
 	private Transform player;
 	private GameObject hitGameObject;
 	private Vector3 offset;
 	private float relCameraPosMag; 
+	private float mouseX;
+	private float mouseY;
+
 
 	void Awake ()
 	{
@@ -23,6 +27,16 @@ public class CameraMovement : MonoBehaviour {
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
 		checkPosition (relCameraPosition);
+		
+	}
+
+	void LateUpdate()
+	{
+		mouseX += Input.GetAxis ("Mouse X");
+		mouseY += Input.GetAxis ("Mouse Y") * ySpeed;
+	
+		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
+		transform.rotation = rotation;
 	}
 
 	void checkPosition(Vector3 checkPos)
