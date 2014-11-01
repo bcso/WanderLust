@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 	
 	public Vector3 relCameraPosition;
-	public float ySpeed = 1.2f;
+	public float ySpeed = 10.0f;
 	public float xSpeed = 1.0f;
 	public GUIText debugText;
 
@@ -47,7 +47,7 @@ public class CameraMovement : MonoBehaviour {
 		mouseX += Input.GetAxis ("Mouse X");
 		mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
 
-		var rotation = Quaternion.Euler(mouseY, mouseX, 0);
+		var rotation = Quaternion.Euler(0, mouseX, 0);
 //		var rotationR = new Vector3(mouseY, 0, 0);
 //		var vectUp = Vector3.up;
 //		player.rotation = Quaternion.LookRotation (rotationR);
