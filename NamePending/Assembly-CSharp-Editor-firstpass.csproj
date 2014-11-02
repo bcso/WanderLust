@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_5;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -46,8 +46,31 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkEditorUtility.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkEnterLicenseKeyEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkIconSelector.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkKeyGenerator.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkLicenseHelper.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkNetworkP2PEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkNetworkViewEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkOnlineResources.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkRegisterPrefabsBrowser.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkRegisterPrefabsEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkServerAuthenticationEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkSettingsEditor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkStatisticsViewer.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkToolExecutor.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkUnityConverter.cs" />
+     <Compile Include="Assets\Plugins\Editor\uLink\Scripts\uLinkUpdateChecker.cs" />
      <Compile Include="Assets\Standard Assets\Editor\KinectCopyPluginDataHelper.cs" />
      <None Include="Assets\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+     <None Include="Assets\Plugins\uLink\Assembly\uLink.xml" />
+ <Reference Include="uLinkEditor">
+ <HintPath>C:/Users/Keri/Documents/NamePending/NamePending/Assets/Plugins/Editor/uLink/Assembly/uLinkEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="uLink">
+ <HintPath>C:/Users/Keri/Documents/NamePending/NamePending/Assets/Plugins/uLink/Assembly/uLink.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
