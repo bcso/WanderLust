@@ -70,16 +70,32 @@
      <Compile Include="Assets\Done\DoneScripts\UnappliedScripts\DoneAnimatorSetup.cs" />
      <Compile Include="Assets\Done\DoneScripts\UnappliedScripts\DoneTags.cs" />
      <Compile Include="Assets\Done\DoneScripts\UnappliedScripts\guiTextSet.cs" />
+     <Compile Include="Assets\PumpkinScript.cs" />
+     <Compile Include="Assets\Scripts\BodySourceManager.cs" />
+     <Compile Include="Assets\Scripts\BodySourceView.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\HashIDs.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\ColorSourceManager.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\ColorSourceView.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\DepthSourceManager.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\DepthSourceView.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\DisableOnStart.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\InfraredSourceManager.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\InfraredSourceView.cs" />
+     <Compile Include="Assets\Scripts\KinectView\Scripts\MultiSourceManager.cs" />
      <Compile Include="Assets\Scripts\MovementScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Skeleton.cs" />
      <Compile Include="Assets\Scripts\Tags.cs" />
      <Compile Include="Assets\Scripts\ZombieMove.cs" />
      <None Include="Assets\Shaders\ReflectiveDiffuseSpecTransp.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E270B966-C44F-8F2A-B30E-9B5559B70154}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,12 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ZombieMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PumpkinScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MovementScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/HashIDs.cs" Line="1" Column="1" />
-      <File FileName="Assets/ZombieMove.cs" Line="8" Column="29" />
+      <File FileName="Assets\Scripts\Skeleton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BodySourceView.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MovementScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HashIDs.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ZombieMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\PumpkinScript.cs" Line="4" Column="32" />
+      <File FileName="..\..\..\..\..\home\Documents\Coding\NamePending\NamePending\Assets\Done\DoneScripts\AlarmSystems\DoneAlarmLight.cs" Line="1" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
