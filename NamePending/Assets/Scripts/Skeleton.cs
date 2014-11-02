@@ -34,9 +34,11 @@ public class Skeleton : MonoBehaviour {
 		FootLeftPos = BodySourceView.FootLeftPos;
 		FootRightPos = BodySourceView.FootRightPos;
 		SpineMidPos = BodySourceView.SpineMidPos;
+		if(SpineMidPos != null && ShoulderRightPos != null && HandRightPos != null) {
 		Debug.Log ("SpineMid: " + SpineMidPos);
 		Debug.Log ("ShoulderRight: " + ShoulderRightPos);
 		Debug.Log ("HandRight: " + HandRightPos);
+		}
 
 	}
 }

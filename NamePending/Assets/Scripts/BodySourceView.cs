@@ -156,18 +156,18 @@ public class BodySourceView : MonoBehaviour
 
 			HandLeftPos = bodyObject.transform.FindChild("HandLeft").position;
 			HandRightPos = bodyObject.transform.FindChild("HandRight").position;
-			ElbowLeftPos = bodyObject.transform.FindChild("ElbowLeftPos").position;
-			ElbowRightPos = bodyObject.transform.FindChild("ElbowRightPos").position;
-			KneeLeftPos = bodyObject.transform.FindChild("KneeLeftPos").position;
-			KneeRightPos = bodyObject.transform.FindChild("KneeRightPos").position;
+			ElbowLeftPos = bodyObject.transform.FindChild("ElbowLeft").position;
+			ElbowRightPos = bodyObject.transform.FindChild("ElbowRight").position;
+			KneeLeftPos = bodyObject.transform.FindChild("KneeLeft").position;
+			KneeRightPos = bodyObject.transform.FindChild("KneeRight").position;
 
 			ShoulderLeftPos = bodyObject.transform.FindChild("ShoulderLeft").position;
 			ShoulderRightPos = bodyObject.transform.FindChild("ShoulderRight").position;
-			FootLeftPos = bodyObject.transform.FindChild("FootLeftPos").position;
-			FootRightPos = bodyObject.transform.FindChild("FootRightPos").position;
-			SpineMidPos = bodyObject.transform.FindChild("SpineMidPos").position;
+			FootLeftPos = bodyObject.transform.FindChild("FootLeft").position;
+			FootRightPos = bodyObject.transform.FindChild("FootRight").position;
+			SpineMidPos = bodyObject.transform.FindChild("SpineMid").position;
 
-            LineRenderer lr = jointObj.GetComponent<LineRenderer>();
+            /*LineRenderer lr = jointObj.GetComponent<LineRenderer>();
             if(targetJoint.HasValue)
             {
                 lr.SetPosition(0, jointObj.localPosition);
@@ -178,6 +178,7 @@ public class BodySourceView : MonoBehaviour
             {
                 lr.enabled = false;
             }
+            */
         }
     }
     
