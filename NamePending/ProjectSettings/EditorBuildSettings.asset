@@ -6,4 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/connectionScene.unity
+  - enabled: 0
     path: Assets/Done/DoneScenes/DoneStealth.unity
+  - enabled: 1
+    path: Assets/_Scenes/NamePendingEnvironment.unity

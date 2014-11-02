@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
 	private float v;
 	private int count = 0;
 	
-	void Awake ()
+	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag (Tags.player).transform;
 		relCameraPosition = transform.position - player.position;
