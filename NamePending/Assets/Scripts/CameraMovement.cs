@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
-
-	public static Skeleton Skeleton;
+	
 	public Vector3 relCameraPosition;
 	public float ySpeed = 2.2f;
 	public float xSpeed = 2.0f;
@@ -37,7 +36,7 @@ public class CameraMovement : MonoBehaviour {
 		Screen.showCursor = false;
 		transform.position = player.transform.position + relCameraPosition;
 		relCameraPosition = transform.position - player.position;
-		if (Skeleton.HandRightPos.y > Skeleton.ElbowRightPos.y+1) //This will have to be the y value of knuckle joint from kinect deltavalue larger than.. --> boolean
+		if (Input.GetMouseButtonDown(0)) //This will have to be the y value of knuckle joint from kinect deltavalue larger than.. --> boolean
 		{
 			debugText.text = "Count: " + count;
 			checkTargetHit (transform.position);
@@ -46,17 +45,10 @@ public class CameraMovement : MonoBehaviour {
 	
 	void LateUpdate()
 	{
-		Debug.Log (Vector3.Angle (Skeleton.HandRightPos, Skeleton.SpineMidPos));
-		//if(Vector3.Angle (Skeleton.HandRightPos, Skeleton.SpineMidPos) > 25)
-		//	mouseX += Skeleton.HandRightPos.x*.8f;
-		//else
-		mouseX += Skeleton.HandRightPos.x*.4f;
-		//mouseY += Skeleton.HandRightPos.z;
-		//Debug.Log (mouseX);//"Right Hand Y: " + Skeleton.HandRightPos.y);
-		//mouseX += Input.GetAxis ("Mouse X"); //Wrist joint position vector float value (vector3), take vector3 .x component
+		mouseX += Input.GetAxis ("Mouse X"); //Wrist joint position vector float value (vector3), take vector3 .x component
 		//mouseY -= Input.GetAxis ("Mouse Y") * ySpeed;
+		
 
-	//Vector3
 		var rotation = Quaternion.Euler(0, mouseX, 0);
 		//Vector3 playerRotation = new Vector3 (mouseY, 0.0f, 0.0f);
 

@@ -7,10 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public float speedDampTime =0.1f;
 
 	public float ySpeed = 1.2f;
-	public float xSpeed =0.0f;
-	//float zPos = 0.0f;
-
-	//float lastzPos = 0.0f;
+	public float xSpeed = 1.0f;
 	private float mouseX;
 	private float mouseY;
 
@@ -19,38 +16,31 @@ public class PlayerController : MonoBehaviour {
 
 	void Awake()
 	{
-
 		anim = GetComponent<Animator> ();
 		hash = GameObject.FindGameObjectWithTag (Tags.gameController).GetComponent<HashIDs> ();
 //		anim.SetLayerWeight (1, 1f);
 	}
-	
 
 	void FixedUpdate()
 	{
-
-		if (Mathf.Abs (Skeleton.FootRightPos.z - Skeleton.FootLeftPos.z) > 5)
-						xSpeed = 3;
-		else if (Mathf.Abs (Skeleton.FootRightPos.z - Skeleton.FootLeftPos.z) > 3)
-						xSpeed = 1;
-		else
-			xSpeed = 0;
-		MovementManagement (xSpeed, 0);
+		float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis ("Vertical");
+	
+		MovementManagement (h, v);
 	}
 
 	void Update()
 	{
 		AudioManagement ();
-
-		//Debug.Log ("Right Foot: " + (Skeleton.FootRightPos.z-startzPos));
 	}
 
 	void MovementManagement(float horizontal, float vertical)
 	{
-		if (horizontal != 0f || vertical != 0f) {
-			Rotating (horizontal, vertical);
-			anim.SetFloat (hash.speedFloat, horizontal ,speedDampTime, Time.deltaTime); 
-		} 
+		if (horizontal != 0f || vertical != 0f) 
+		{
+			Rotating(horizontal, vertical);
+			anim.SetFloat(hash.speedFloat, 4.5f, speedDampTime, Time.deltaTime); 
+		}
 
 		else
 		{
